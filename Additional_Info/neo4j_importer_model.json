@@ -3,38 +3,24 @@
   "visualisation": {
     "nodes": [
       {
-        "id": "n:1",
-        "position": {
-          "x": -27.142262895174703,
-          "y": 36.03369384359401
-        }
-      },
-      {
         "id": "n:2",
         "position": {
-          "x": 78.89097740566869,
-          "y": -47.545759927809925
+          "x": 126.98774240746101,
+          "y": -226.63784582442696
         }
       },
       {
         "id": "n:3",
         "position": {
-          "x": -45.12108582228472,
-          "y": -79.8356933720695
+          "x": -157.85281868705223,
+          "y": -167.5532712320666
         }
       },
       {
-        "id": "n:4",
+        "id": "n:1",
         "position": {
-          "x": 125.42815549666096,
-          "y": 59.2115557093406
-        }
-      },
-      {
-        "id": "n:5",
-        "position": {
-          "x": 154.0568774369478,
-          "y": -141.1894978726672
+          "x": 130.43740219471823,
+          "y": 63.584198440272374
         }
       }
     ]
@@ -45,28 +31,6 @@
       "version": "1.0.0",
       "graphSchema": {
         "nodeLabels": [
-          {
-            "$id": "nl:1",
-            "token": "CIK",
-            "properties": [
-              {
-                "$id": "p:1",
-                "token": "CIK",
-                "type": {
-                  "type": "integer"
-                },
-                "nullable": true
-              },
-              {
-                "$id": "p:2",
-                "token": "ticker",
-                "type": {
-                  "type": "string"
-                },
-                "nullable": true
-              }
-            ]
-          },
           {
             "$id": "nl:2",
             "token": "Company",
@@ -86,6 +50,14 @@
                   "type": "string"
                 },
                 "nullable": true
+              },
+              {
+                "$id": "p:5",
+                "token": "cikId",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
               }
             ]
           },
@@ -94,7 +66,7 @@
             "token": "AssetManager",
             "properties": [
               {
-                "$id": "p:5",
+                "$id": "p:1",
                 "token": "managerCik",
                 "type": {
                   "type": "integer"
@@ -102,7 +74,7 @@
                 "nullable": true
               },
               {
-                "$id": "p:6",
+                "$id": "p:2",
                 "token": "managerName",
                 "type": {
                   "type": "string"
@@ -112,33 +84,11 @@
             ]
           },
           {
-            "$id": "nl:4",
-            "token": "Cusip6",
-            "properties": [
-              {
-                "$id": "p:10",
-                "token": "cusip6",
-                "type": {
-                  "type": "string"
-                },
-                "nullable": true
-              },
-              {
-                "$id": "p:11",
-                "token": "form10KUrls",
-                "type": {
-                  "type": "string"
-                },
-                "nullable": true
-              }
-            ]
-          },
-          {
-            "$id": "nl:5",
+            "$id": "nl:1",
             "token": "Document",
             "properties": [
               {
-                "$id": "p:12",
+                "$id": "p:6",
                 "token": "path",
                 "type": {
                   "type": "string"
@@ -151,64 +101,16 @@
         "relationshipTypes": [
           {
             "$id": "rt:1",
-            "token": "CIK_OF",
+            "token": "FILED",
             "properties": []
           },
           {
             "$id": "rt:2",
-            "token": "OWNS_SHARES",
-            "properties": [
-              {
-                "$id": "p:7",
-                "token": "Value",
-                "type": {
-                  "type": "string"
-                },
-                "nullable": true
-              },
-              {
-                "$id": "p:8",
-                "token": "shares",
-                "type": {
-                  "type": "integer"
-                },
-                "nullable": true
-              },
-              {
-                "$id": "p:9",
-                "token": "share_value",
-                "type": {
-                  "type": "float"
-                },
-                "nullable": true
-              }
-            ]
-          },
-          {
-            "$id": "rt:3",
-            "token": "HAS_CUSIP",
-            "properties": []
-          },
-          {
-            "$id": "rt:4",
-            "token": "SHARES_ID",
-            "properties": []
-          },
-          {
-            "$id": "rt:5",
             "token": "FILED",
             "properties": []
           }
         ],
         "nodeObjectTypes": [
-          {
-            "$id": "n:1",
-            "labels": [
-              {
-                "$ref": "#nl:1"
-              }
-            ]
-          },
           {
             "$id": "n:2",
             "labels": [
@@ -226,18 +128,10 @@
             ]
           },
           {
-            "$id": "n:4",
+            "$id": "n:1",
             "labels": [
               {
-                "$ref": "#nl:4"
-              }
-            ]
-          },
-          {
-            "$id": "n:5",
-            "labels": [
-              {
-                "$ref": "#nl:5"
+                "$ref": "#nl:1"
               }
             ]
           }
@@ -249,7 +143,7 @@
               "$ref": "#rt:1"
             },
             "from": {
-              "$ref": "#n:1"
+              "$ref": "#n:3"
             },
             "to": {
               "$ref": "#n:2"
@@ -261,80 +155,16 @@
               "$ref": "#rt:2"
             },
             "from": {
-              "$ref": "#n:3"
-            },
-            "to": {
               "$ref": "#n:2"
-            }
-          },
-          {
-            "$id": "r:3",
-            "type": {
-              "$ref": "#rt:3"
-            },
-            "from": {
-              "$ref": "#n:2"
-            },
-            "to": {
-              "$ref": "#n:4"
-            }
-          },
-          {
-            "$id": "r:4",
-            "type": {
-              "$ref": "#rt:4"
-            },
-            "from": {
-              "$ref": "#n:4"
             },
             "to": {
               "$ref": "#n:1"
-            }
-          },
-          {
-            "$id": "r:5",
-            "type": {
-              "$ref": "#rt:5"
-            },
-            "from": {
-              "$ref": "#n:4"
-            },
-            "to": {
-              "$ref": "#n:5"
             }
           }
         ],
         "constraints": [
           {
             "$id": "c:1",
-            "name": "CIK_CIK_uniq",
-            "constraintType": "uniqueness",
-            "entityType": "node",
-            "nodeLabel": {
-              "$ref": "#nl:1"
-            },
-            "properties": [
-              {
-                "$ref": "#p:1"
-              }
-            ]
-          },
-          {
-            "$id": "c:3",
-            "name": "managerCik_AssetManager_uniq",
-            "constraintType": "uniqueness",
-            "entityType": "node",
-            "nodeLabel": {
-              "$ref": "#nl:3"
-            },
-            "properties": [
-              {
-                "$ref": "#p:5"
-              }
-            ]
-          },
-          {
-            "$id": "c:2",
             "name": "name_Company_uniq",
             "constraintType": "uniqueness",
             "entityType": "node",
@@ -348,30 +178,30 @@
             ]
           },
           {
-            "$id": "c:4",
-            "name": "cusip6_Cusip6_uniq",
-            "constraintType": "uniqueness",
-            "entityType": "node",
-            "nodeLabel": {
-              "$ref": "#nl:4"
-            },
-            "properties": [
-              {
-                "$ref": "#p:10"
-              }
-            ]
-          },
-          {
-            "$id": "c:5",
+            "$id": "c:3",
             "name": "path_Document_uniq",
             "constraintType": "uniqueness",
             "entityType": "node",
             "nodeLabel": {
-              "$ref": "#nl:5"
+              "$ref": "#nl:1"
             },
             "properties": [
               {
-                "$ref": "#p:12"
+                "$ref": "#p:6"
+              }
+            ]
+          },
+          {
+            "$id": "c:2",
+            "name": "managerCik_AssetManager_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
               }
             ]
           }
@@ -379,20 +209,6 @@
         "indexes": [
           {
             "$id": "i:1",
-            "name": "CIK_CIK_uniq",
-            "indexType": "default",
-            "entityType": "node",
-            "nodeLabel": {
-              "$ref": "#nl:1"
-            },
-            "properties": [
-              {
-                "$ref": "#p:1"
-              }
-            ]
-          },
-          {
-            "$id": "i:2",
             "name": "name_Company_uniq",
             "indexType": "default",
             "entityType": "node",
@@ -406,7 +222,7 @@
             ]
           },
           {
-            "$id": "i:3",
+            "$id": "i:2",
             "name": "managerCik_AssetManager_uniq",
             "indexType": "default",
             "entityType": "node",
@@ -415,35 +231,21 @@
             },
             "properties": [
               {
-                "$ref": "#p:5"
+                "$ref": "#p:1"
               }
             ]
           },
           {
-            "$id": "i:4",
-            "name": "cusip6_Cusip6_uniq",
-            "indexType": "default",
-            "entityType": "node",
-            "nodeLabel": {
-              "$ref": "#nl:4"
-            },
-            "properties": [
-              {
-                "$ref": "#p:10"
-              }
-            ]
-          },
-          {
-            "$id": "i:5",
+            "$id": "i:3",
             "name": "path_Document_uniq",
             "indexType": "default",
             "entityType": "node",
             "nodeLabel": {
-              "$ref": "#nl:5"
+              "$ref": "#nl:1"
             },
             "properties": [
               {
-                "$ref": "#p:12"
+                "$ref": "#p:6"
               }
             ]
           }
@@ -452,14 +254,6 @@
     },
     "graphSchemaExtensionsRepresentation": {
       "nodeKeyProperties": [
-        {
-          "node": {
-            "$ref": "#n:1"
-          },
-          "keyProperty": {
-            "$ref": "#p:1"
-          }
-        },
         {
           "node": {
             "$ref": "#n:2"
@@ -473,23 +267,15 @@
             "$ref": "#n:3"
           },
           "keyProperty": {
-            "$ref": "#p:5"
+            "$ref": "#p:1"
           }
         },
         {
           "node": {
-            "$ref": "#n:4"
+            "$ref": "#n:1"
           },
           "keyProperty": {
-            "$ref": "#p:10"
-          }
-        },
-        {
-          "node": {
-            "$ref": "#n:5"
-          },
-          "keyProperty": {
-            "$ref": "#p:12"
+            "$ref": "#p:6"
           }
         }
       ]
@@ -499,21 +285,42 @@
         "type": "local",
         "tableSchemas": [
           {
-            "name": "Company_CIK_CUSIP_TKR.csv",
+            "name": "Companies.csv",
             "expanded": true,
             "fields": [
               {
+                "name": "cusip6",
+                "sample": "23135",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
+                "name": "cik",
+                "sample": "1018724",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              },
+              {
                 "name": "name",
-                "sample": "Amazon",
+                "sample": "AMAZON",
                 "recommendedType": {
                   "type": "string"
                 }
               },
               {
-                "name": "CIK",
-                "sample": "1018724",
+                "name": "cusip",
+                "sample": "23135106",
                 "recommendedType": {
-                  "type": "integer"
+                  "type": "string"
+                }
+              },
+              {
+                "name": "form10KUrls",
+                "sample": "data/form10k-sample/0001018724-23-000004.pdf",
+                "recommendedType": {
+                  "type": "string"
                 }
               },
               {
@@ -522,25 +329,11 @@
                 "recommendedType": {
                   "type": "string"
                 }
-              },
-              {
-                "name": "CUSIP",
-                "sample": "23135106",
-                "recommendedType": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "CUSIP6",
-                "sample": "231351",
-                "recommendedType": {
-                  "type": "string"
-                }
               }
             ]
           },
           {
-            "name": "Asset_Manager_Holdings.csv",
+            "name": "Asset_Holdings.csv",
             "expanded": true,
             "fields": [
               {
@@ -587,7 +380,7 @@
               },
               {
                 "name": "companyName",
-                "sample": "AMAZON COM INC",
+                "sample": "AMAZON",
                 "recommendedType": {
                   "type": "string"
                 }
@@ -608,9 +401,9 @@
               },
               {
                 "name": "Value",
-                "sample": "6360000000",
+                "sample": "6360000000.0",
                 "recommendedType": {
-                  "type": "string"
+                  "type": "float"
                 }
               },
               {
@@ -628,75 +421,27 @@
                 }
               }
             ]
-          },
-          {
-            "name": "cik-10k-urls_short_list.csv",
-            "expanded": true,
-            "fields": [
-              {
-                "name": "cusip6",
-                "sample": "23135",
-                "recommendedType": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "cik",
-                "sample": "1018724",
-                "recommendedType": {
-                  "type": "integer"
-                }
-              },
-              {
-                "name": "name",
-                "sample": "'AMAZON\"",
-                "recommendedType": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "cusip",
-                "sample": "023135106",
-                "recommendedType": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "form10KUrls",
-                "sample": "0001018724-23-000004.txt",
-                "recommendedType": {
-                  "type": "string"
-                }
-              },
-              {
-                "name": "CIK",
-                "sample": "1018724",
-                "recommendedType": {
-                  "type": "integer"
-                }
-              }
-            ]
           }
         ]
       },
       "nodeMappings": [
         {
           "node": {
-            "$ref": "#n:1"
+            "$ref": "#n:3"
           },
-          "tableName": "Company_CIK_CUSIP_TKR.csv",
+          "tableName": "Asset_Holdings.csv",
           "propertyMappings": [
             {
-              "fieldName": "CIK",
               "property": {
                 "$ref": "#p:1"
-              }
+              },
+              "fieldName": "managerCik"
             },
             {
-              "fieldName": "ticker",
               "property": {
                 "$ref": "#p:2"
-              }
+              },
+              "fieldName": "managerName"
             }
           ]
         },
@@ -704,73 +449,39 @@
           "node": {
             "$ref": "#n:2"
           },
-          "tableName": "Company_CIK_CUSIP_TKR.csv",
+          "tableName": "Companies.csv",
           "propertyMappings": [
             {
-              "fieldName": "name",
               "property": {
                 "$ref": "#p:3"
-              }
+              },
+              "fieldName": "name"
             },
             {
-              "fieldName": "ticker",
               "property": {
                 "$ref": "#p:4"
-              }
-            }
-          ]
-        },
-        {
-          "node": {
-            "$ref": "#n:3"
-          },
-          "tableName": "Asset_Manager_Holdings.csv",
-          "propertyMappings": [
+              },
+              "fieldName": "ticker"
+            },
             {
-              "fieldName": "managerCik",
               "property": {
                 "$ref": "#p:5"
-              }
-            },
+              },
+              "fieldName": "cik"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "tableName": "Companies.csv",
+          "propertyMappings": [
             {
-              "fieldName": "managerName",
               "property": {
                 "$ref": "#p:6"
-              }
-            }
-          ]
-        },
-        {
-          "node": {
-            "$ref": "#n:4"
-          },
-          "tableName": "cik-10k-urls_short_list.csv",
-          "propertyMappings": [
-            {
-              "fieldName": "cusip6",
-              "property": {
-                "$ref": "#p:10"
-              }
-            },
-            {
-              "fieldName": "form10KUrls",
-              "property": {
-                "$ref": "#p:11"
-              }
-            }
-          ]
-        },
-        {
-          "node": {
-            "$ref": "#n:5"
-          },
-          "tableName": "cik-10k-urls_short_list.csv",
-          "propertyMappings": [
-            {
-              "fieldName": "form10KUrls",
-              "property": {
-                "$ref": "#p:12"
-              }
+              },
+              "fieldName": "form10KUrls"
             }
           ]
         }
@@ -780,81 +491,23 @@
           "relationship": {
             "$ref": "#r:1"
           },
-          "tableName": "Company_CIK_CUSIP_TKR.csv",
+          "tableName": "Asset_Holdings.csv",
           "propertyMappings": [],
           "fromMapping": {
-            "fieldName": "CIK"
+            "fieldName": "managerCik"
           },
           "toMapping": {
-            "fieldName": "ticker"
+            "fieldName": "companyName"
           }
         },
         {
           "relationship": {
             "$ref": "#r:2"
           },
-          "tableName": "Asset_Manager_Holdings.csv",
-          "propertyMappings": [
-            {
-              "fieldName": "Value",
-              "property": {
-                "$ref": "#p:7"
-              }
-            },
-            {
-              "fieldName": "shares",
-              "property": {
-                "$ref": "#p:8"
-              }
-            },
-            {
-              "fieldName": "share_value",
-              "property": {
-                "$ref": "#p:9"
-              }
-            }
-          ],
-          "fromMapping": {
-            "fieldName": "managerCik"
-          },
-          "toMapping": {
-            "fieldName": "ticker"
-          }
-        },
-        {
-          "relationship": {
-            "$ref": "#r:4"
-          },
-          "tableName": "cik-10k-urls_short_list.csv",
-          "propertyMappings": [],
-          "fromMapping": {
-            "fieldName": "cusip6"
-          },
-          "toMapping": {
-            "fieldName": "cik"
-          }
-        },
-        {
-          "relationship": {
-            "$ref": "#r:3"
-          },
-          "tableName": "cik-10k-urls_short_list.csv",
+          "tableName": "Companies.csv",
           "propertyMappings": [],
           "fromMapping": {
             "fieldName": "name"
-          },
-          "toMapping": {
-            "fieldName": "cusip6"
-          }
-        },
-        {
-          "relationship": {
-            "$ref": "#r:5"
-          },
-          "tableName": "cik-10k-urls_short_list.csv",
-          "propertyMappings": [],
-          "fromMapping": {
-            "fieldName": "cusip6"
           },
           "toMapping": {
             "fieldName": "form10KUrls"
